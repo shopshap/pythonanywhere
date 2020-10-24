@@ -1,0 +1,93 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  		<title>NIGHTMARE_Login</title>
+<!--
+
+Highway Template
+
+https://templatemo.com/tm-520-highway
+
+-->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="static/css/fontAwesome.css">
+        <link rel="stylesheet" href="static/css/light-box.css">
+        <link rel="stylesheet" href="static/css/templatemo-style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+        <script src="static/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="http://shopsupanimit.pythonanywhere.com/">HAVE A NIGHTMARE</a>
+        </div>
+        <div class="menu-icon">
+        <span></span>
+      </div>
+    </nav>
+
+    <div id="video-container">
+        <div class="video-overlay"></div>
+        <div class="video-content">
+            <div class="inner">
+              <h1>Login</h1>
+              <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+                <button style="background-color:#6202e5; color:white" class="btn btn-outline-info" type="submit">Sign in</button>
+            </form>
+            <br><a href="/Register" target="blank">Register here!</strong></a>!
+            </div>
+        </div>
+        <video autoplay="" loop="" muted>
+        	<source src="static/highway-loop.mp4" type="imgs/jpg" />
+        </video>
+    </div>
+
+    <section class="overlay-menu">
+      <div class="container">
+        <div class="row">
+          <div class="main-menu">
+              <ul>
+                  <li>
+                      <a href="/"><font color="#EC1F1F"> Homepage</font></a>
+                  </li>
+                  <li>
+                      <a href="/thaistory"><font color="#EC1F1F">ThaiStory</font></a>
+                  </li>
+                  <li>
+                      <a href="/International"><font color="#EC1F1F">International</font></a>
+                  </li>
+                  <li>
+                      <a href="/Login"><font color="#EC1F1F">Login</font></a>
+                  </li>
+              </ul>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="static/js/vendor/bootstrap.min.js"></script>
+
+    <script src="static/js/plugins.js"></script>
+    <script src="static/js/main.js"></script>
+
+
+</body>
+</html>
