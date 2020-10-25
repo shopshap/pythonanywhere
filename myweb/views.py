@@ -5,12 +5,7 @@ from .models import *
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import logout, authenticate, login
 from django.contrib import messages
-from .forms import NewUserForm
-from django.shortcuts import get_object_or_404
-from django.urls import reverse
-from django.views import generic
-from django.utils import timezone
-from django.http import Http404
+
 
 # Create your views here.
 def index(req):
@@ -36,6 +31,10 @@ def thaistoryuser(req):
 
 def Internationaluser(req):
 	return render(req, 'myweb/Internationaluser.html')
+
+def requeststory(req):
+    Destinations = Destination.objects.all()
+    return render(req, 'myweb/requeststory.html', {'Destinations': Destinations})
 
 def Register(req):
     if req.method == "POST":

@@ -1,20 +1,13 @@
 from django.db import models
 
-class Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+
+class Destination(models.Model):
+    name = models.CharField(max_length=100)
+    img = models.CharField(max_length=300)
+    desc = models.TextField()
 
     def __str__(self):
-        return f'{self.question_text}'
-
-
-class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
-
-    def __str__(self):
-        return f'{self.question.question_text} - {self.choice_text} - {self.votes}'
+        return f'{self.name} - {self.img} '
 
 class Thaistory(models.Model): #เรื่องไทย
     thaistory_text = models.CharField(max_length=200) #ไทย
@@ -29,11 +22,3 @@ class CountryStory(models.Model):#ต่างจังหวัด
 
     def __str__(self):
         return f'{self.story_type}'
-
-class requst(models.Model):
-    name = models.CharField(max_length=120)
-    email = models.EmailField()
-    requststory = models.TextField()
-
-    def __str__(self):
-        return self.name

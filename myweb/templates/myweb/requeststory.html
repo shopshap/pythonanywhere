@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  		<title>NIGHTMARE_Login</title>
+  		<title>NIGHTMARE_Request story</title>
 <!--
 
 Highway Template
@@ -31,7 +31,7 @@ https://templatemo.com/tm-520-highway
 
     <nav>
         <div class="logo">
-            <a href="http://shopsupanimit.pythonanywhere.com/">HAVE A NIGHTMARE</a>
+            <a href="http://shopsupanimit.pythonanywhere.com/">HAVE A NIGHTMARE </a>
         </div>
         <div class="menu-icon">
         <span></span>
@@ -42,19 +42,28 @@ https://templatemo.com/tm-520-highway
         <div class="video-overlay"></div>
         <div class="video-content">
             <div class="inner">
-              <h1>Login</h1>
-              <form method="post">
-              {% csrf_token %}
-              {{ form.as_p }}
-                <button style="background-color:#6202e5; color:white" class="btn btn-outline-info" type="submit">Sign in</button>
-            </form>
-            <br><a href="/Register" target="blank">Register here!</strong></a>!
+              <h1>Welcome to <em>NIGHTMARE</em></h1>
+              <p>แหล่งรวมเรื่องสยอง</p>
+
+                <div class="scroll-icon">
+                    <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="static/img/scroll-icon.png" alt=""></a>
+                </div>
             </div>
         </div>
         <video autoplay="" loop="" muted>
-        	<source src="static/highway-loop.mp4" type="imgs/jpg" />
+        	<source src="static/highway-loop.mp4" type="video/mp4" />
         </video>
     </div>
+
+
+    {% for a in Destinations %}
+        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+            <span class="w3-right w3-opacity" style="font-Size:35Px;" >ชื่อเรื่อง :{{ a.name }}</span>
+            <hr class="w3-clear">
+            <img src="{{ a.img }}" style="width:50%" class="w3-margin-bottom">
+            <p style="font-Size:25Px;">ข้อมูลเกี่ยวกับเรื่อง:  {{a.desc}}</p>
+            </div>
+        {% endfor %}
 
     <footer>
         <div class="container-fluid">
@@ -64,32 +73,38 @@ https://templatemo.com/tm-520-highway
         </div>
     </footer>
 
+
+
+
+
     <section class="overlay-menu">
       <div class="container">
         <div class="row">
           <div class="main-menu">
               <ul>
                   <li>
-                      <a href="/"><font color="#EC1F1F"> Homepage</font></a>
+                      <a href="/indexuser"><font color="#EC1F1F"> Homepage</font></a>
                   </li>
                   <li>
-                      <a href="/thaistory"><font color="#EC1F1F">ThaiStory</font></a>
+                      <a href="/thaistoryuser"><font color="#EC1F1F">ThaiStory</font></a>
                   </li>
                   <li>
-                      <a href="/International"><font color="#EC1F1F">International</font></a>
+                      <a href="/Internationaluser"><font color="#EC1F1F">International</font></a>
                   </li>
                   <li>
-                      <a href="/Login"><font color="#EC1F1F">Login</font></a>
+                      <a href="/requeststory"><font color="#EC1F1F">Request story</font></a>
+                  </li>
+                  <li>
+                      <h3> Welcome  {{user.username}} </h3> <a href="Login"><font color="#EC1F1F">Logout</font></a>
                   </li>
               </ul>
-
           </div>
         </div>
       </div>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script>window.jQuery || document.white('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
     <script src="static/js/vendor/bootstrap.min.js"></script>
 
